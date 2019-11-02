@@ -115,23 +115,23 @@ public class WorkingActivity extends AppCompatActivity {
                 priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                         " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 0 + "\n" + "Total Price : " + 4 * quantity + "\n" + "Thank You  " +"\n" + "Have a nice day";
                 displayMessage(priceMessage);
-                Toast.makeText(getApplicationContext(), "Order Placed...",
+                Toast.makeText(getApplicationContext(), "Order Not Placed...",
                         Toast.LENGTH_LONG).show();
                 change();
             } else if (quantity > 0 && Whipped.isChecked()) {
                 priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                         " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 1 * quantity + "\n" + "Total Price : " + (4 * quantity + 1 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                 displayMessage(priceMessage);
-                Toast.makeText(getApplicationContext(), "Order Placed...",
+                Toast.makeText(getApplicationContext(), "Order Alwayse Placed...",
                         Toast.LENGTH_LONG).show();
                 change();
             } else if (quantity > 0 && choco.isChecked()) {
                 priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" + " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + (2 * quantity) + "\n" + "Total Price : " + (4 * quantity + 2 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                 displayMessage(priceMessage);
-                Toast.makeText(getApplicationContext(), "Order Placed...",
+                Toast.makeText(getApplicationContext(), "Order Thankyou Placed...",
                         Toast.LENGTH_LONG).show();
             } else if (quantity == 0) {
-                Toast.makeText(getApplicationContext(), "Invalid Selection....",
+                Toast.makeText(getApplicationContext(), "Invalid Thankyou Selection....",
                         Toast.LENGTH_LONG).show();
                 displayError("Please Select The Amount Of Coffee..");
             }
@@ -141,7 +141,7 @@ public class WorkingActivity extends AppCompatActivity {
         } else if (value.length() == 0)
 
         {
-            Toast.makeText(getApplicationContext(),"Please enter your name", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Please ", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -150,12 +150,7 @@ public class WorkingActivity extends AppCompatActivity {
 
     public void Print_Recipt(View view) {
 
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:"));
-
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Bill for coffee");
-        intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
-        startActivity(intent);
+        // write an function body to send main through intent
 
     }
 
