@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -35,6 +36,7 @@ public class WorkingActivity extends AppCompatActivity {
     private FirebaseUser user;
     private TextView txt;
     private DatabaseReference reference;
+    private Button Order,PrintRecipt,inc,dec;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -42,12 +44,12 @@ public class WorkingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_working);
 
-        txt = findViewById(R.id.username_toolbar);
 
-        tolbar = findViewById(R.id.toolbarworking);
-        setSupportActionBar(tolbar);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("");
-        getSupportActionBar().dispatchMenuVisibilityChanged(true);
+        Order = findViewById(R.id.submitOrder);
+        PrintRecipt = findViewById(R.id.printRecipt);
+        txt = findViewById(R.id.username_toolbar);
+        inc = findViewById(R.id.increment_by_1);
+        dec = findViewById(R.id.decrement_by_1);
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -69,12 +71,45 @@ public class WorkingActivity extends AppCompatActivity {
             }
         });
 
+        Order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                submitOrder();
+
+            }
+        });
+
+        PrintRecipt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PrintRecipt();
+            }
+        });
+
+        inc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                increment();
+            }
+        });
+
+        dec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                decrement();
+            }
+        });
+    }
+
+    private void PrintRecipt() {
+
+
     }
 
     int quantity = 0;
 
 
-    public void increment(View view) {
+    private void increment() {
 
 
         quantity = quantity + 1;
@@ -84,7 +119,7 @@ public class WorkingActivity extends AppCompatActivity {
 
     }
 
-    public void decrement(View view) {
+    private void decrement() {
         int res = 0;
         quantity = quantity - 1;
         if (quantity <= 0) {
@@ -97,7 +132,7 @@ public class WorkingActivity extends AppCompatActivity {
 
     String priceMessage ;
 
-    public void submitOrder(View view) {
+    private void submitOrder() {
 
         EditText text = (EditText) findViewById(R.id.name);
         String value = text.getText().toString();
@@ -148,11 +183,7 @@ public class WorkingActivity extends AppCompatActivity {
     }
 
 
-    public void Print_Recipt(View view) {
 
-        // write an function body to send main through intent
-
-    }
 
     private void displayquantity(int number) {
 
@@ -161,6 +192,7 @@ public class WorkingActivity extends AppCompatActivity {
 
 
     }
+
     private void change(){
         TextView PriceTextView = (TextView) findViewById(R.id.Order_sum);
         PriceTextView.setText("Order \nSummary:");
@@ -188,6 +220,8 @@ public class WorkingActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu,menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

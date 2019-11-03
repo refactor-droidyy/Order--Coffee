@@ -16,7 +16,7 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:id="@+id/toolbarworking"
-        android:background="@color/colorPrimary"
+        android:background="#F68969"
         android:layout_height="wrap_content">
 
 
@@ -108,7 +108,8 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:text="-"
-                    android:background="#8B4513"
+                    android:id="@+id/decrement_by_1"
+                    android:background="#8B4536"
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="8dp"
                     android:textStyle="bold"/>
@@ -123,19 +124,19 @@
                     />
                 <Button
                     android:layout_width="80dp"
-                    android:layout_height="48dp"
+                    android:layout_height="100dp"
                     android:text="+"
-                    android:onClick="increment"
-                    android:background="#8B4513"
+                    android:background="#843535"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="16dp"
+                    android:id="@+id/increment_by_1"
                     android:textStyle="bold"/>
 
             </LinearLayout>
 
             <TextView
 
-                android:text="Price"
+                android:text="Order Summary"
                 android:id="@+id/Order_sum"
 
                 android:layout_marginTop="16dp"
@@ -156,8 +157,8 @@
                 android:padding="6dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
-                android:background="#8B4513"
-                android:onClick="submitOrder"
+                android:background="#8B4803"
+                android:id="@+id/submitOrder"
                 />
             <Button
                 style="@style/custom"
@@ -165,8 +166,8 @@
                 android:layout_marginTop="24dp"
                 android:text="Print Recipt"
                 android:layout_marginLeft="8dp"
-                android:background="#8B4513"
-                android:onClick="Print_Recip"
+                android:background="#8B4373"
+                android:id="@+id/printRecipt"
                 />
 
         </LinearLayout>
