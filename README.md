@@ -1,12 +1,12 @@
 # Order Coffee App
 
-## Description
+### Description
 
 This is simple app for coffee Ordering , consist of user login which is  maintained through firebase.
 
-# How to participate
+#### How to participate
 
-### There are a number of issues opened for participants to solve marked as:
+##### There are a number of issues opened for participants to solve marked as:
 
 1. Very Easy
 2. Easy
