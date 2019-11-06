@@ -16,7 +16,7 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:id="@+id/toolbarworking"
-        android:background="#8B4536"
+        android:background="#843536"
         android:layout_height="wrap_content">
 
 
@@ -109,7 +109,7 @@
                     android:layout_height="48dp"
                     android:text="-"
                     android:id="@+id/decrement_by_1"
-                    android:background="#8B4536"
+                    android:background="#843536"
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="8dp"
                     android:textStyle="bold"/>
@@ -157,7 +157,7 @@
                 android:padding="6dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
-                android:background="#8B4536"
+                android:background="#843536"
                 android:id="@+id/submitOrder"
                 />
             <Button
@@ -166,7 +166,7 @@
                 android:layout_marginTop="24dp"
                 android:text="Print Recipt"
                 android:layout_marginLeft="8dp"
-                android:background="#8B4536"
+                android:background="#843536"
                 android:id="@+id/printRecipt"
                 />
 
