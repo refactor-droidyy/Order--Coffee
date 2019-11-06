@@ -123,8 +123,8 @@
                     android:id="@+id/quantity_text_view"
                     />
                 <Button
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:text="+"
                     android:background="#843536"
                     android:layout_marginLeft="8dp"
