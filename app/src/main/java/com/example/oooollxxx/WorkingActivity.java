@@ -176,7 +176,7 @@ public class WorkingActivity extends AppCompatActivity {
         } else if (value.length() == 0)
 
         {
-            Toast.makeText(getApplicationContext(),"Please ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Please Enter Your Name..", Toast.LENGTH_SHORT).show();
         }
 
 
