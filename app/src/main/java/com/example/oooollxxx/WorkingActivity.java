@@ -143,30 +143,30 @@ public class WorkingActivity extends AppCompatActivity {
         if (value.length() != 0) {
             if (quantity > 0 && Whipped.isChecked() && choco.isChecked()) {
 
-                Toast.makeText(getApplicationContext(), "Select Any One  Topping",
+                Toast.makeText(getApplicationContext(), "You Can Select Only One Topping",
                         Toast.LENGTH_SHORT).show();
 
             } else if (quantity > 0 && !Whipped.isChecked() && !choco.isChecked()) {
                 priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                         " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 0 + "\n" + "Total Price : " + 4 * quantity + "\n" + "Thank You  " +"\n" + "Have a nice day";
                 displayMessage(priceMessage);
-                Toast.makeText(getApplicationContext(), "Order Not Placed...",
+                Toast.makeText(getApplicationContext(), "Please Select Any One Topping...",
                         Toast.LENGTH_LONG).show();
                 change();
             } else if (quantity > 0 && Whipped.isChecked()) {
                 priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                         " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 1 * quantity + "\n" + "Total Price : " + (4 * quantity + 1 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                 displayMessage(priceMessage);
-                Toast.makeText(getApplicationContext(), "Order Alwayse Placed...",
+                Toast.makeText(getApplicationContext(), "Order Placed...",
                         Toast.LENGTH_LONG).show();
                 change();
             } else if (quantity > 0 && choco.isChecked()) {
                 priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" + " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + (2 * quantity) + "\n" + "Total Price : " + (4 * quantity + 2 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                 displayMessage(priceMessage);
-                Toast.makeText(getApplicationContext(), "Order Thankyou Placed...",
+                Toast.makeText(getApplicationContext(), "Order Placed...",
                         Toast.LENGTH_LONG).show();
             } else if (quantity == 0) {
-                Toast.makeText(getApplicationContext(), "Invalid Thankyou Selection....",
+                Toast.makeText(getApplicationContext(), "Please Select The Amount Of Coffee",
                         Toast.LENGTH_LONG).show();
                 displayError("Please Select The Amount Of Coffee..");
             }
@@ -176,7 +176,7 @@ public class WorkingActivity extends AppCompatActivity {
         } else if (value.length() == 0)
 
         {
-            Toast.makeText(getApplicationContext(),"Please ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Please Enter Your Name...", Toast.LENGTH_SHORT).show();
         }
 
 
