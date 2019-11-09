@@ -50,6 +50,8 @@ public class WorkingActivity extends AppCompatActivity {
         txt = findViewById(R.id.username_toolbar);
         inc = findViewById(R.id.increment_by_1);
         dec = findViewById(R.id.decrement_by_1);
+        tb = findViewById(R.id.toolbarworking);
+        setSupportActionBar(tb);
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -157,13 +159,23 @@ public class WorkingActivity extends AppCompatActivity {
                 priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                         " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 1 * quantity + "\n" + "Total Price : " + (4 * quantity + 1 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                 displayMessage(priceMessage);
+
                 Toast.makeText(getApplicationContext(), "Order Placed...",
+
+                SendMail();
+                Toast.makeText(getApplicationContext(), "Order Alwayse Placed...",
+
                         Toast.LENGTH_LONG).show();
                 change();
             } else if (quantity > 0 && choco.isChecked()) {
                 priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" + " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + (2 * quantity) + "\n" + "Total Price : " + (4 * quantity + 2 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                 displayMessage(priceMessage);
+
                 Toast.makeText(getApplicationContext(), "Order Placed...",
+
+                SendMail();
+                Toast.makeText(getApplicationContext(), "Order Thankyou Placed...",
+
                         Toast.LENGTH_LONG).show();
             } else if (quantity == 0) {
                 Toast.makeText(getApplicationContext(), "Please Select The Amount Of Coffee...",
@@ -180,6 +192,16 @@ public class WorkingActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    private void SendMail(){
+        String subject = "Coffee Reciept";
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT,priceMessage);
+
+        intent.setType("message/rfc822");
+        startActivity(Intent.createChooser(intent,"Choose youe E-mail Client" ));
     }
 
 
