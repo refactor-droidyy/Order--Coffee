@@ -50,6 +50,8 @@ public class WorkingActivity extends AppCompatActivity {
         txt = findViewById(R.id.username_toolbar);
         inc = findViewById(R.id.increment_by_1);
         dec = findViewById(R.id.decrement_by_1);
+        tb = findViewById(R.id.toolbarworking);
+        setSupportActionBar(tb);
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
