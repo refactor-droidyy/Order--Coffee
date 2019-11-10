@@ -32,7 +32,7 @@ import java.util.Objects;
 
 public class WorkingActivity extends AppCompatActivity {
 
-    private Toolbar tolbar;
+    private Toolbar tb;
     private FirebaseUser user;
     private TextView txt;
     private DatabaseReference reference;
