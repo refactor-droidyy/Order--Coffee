@@ -242,7 +242,7 @@ public class WorkingActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_logout:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(WorkingActivity.this,RegisterActivity.class));
+                startActivity(new Intent(WorkingActivity.this,MainActivity.class));
                 finish();
 
         }
