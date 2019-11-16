@@ -93,6 +93,51 @@
                 style="@style/custom"
                 />
 
+            <CheckBox
+
+                android:id="@+id/nutella"
+                style="@style/custom"
+                android:layout_width="118dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Nutella" />
+
+            <CheckBox
+
+                android:text="Mint"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:id="@+id/mint"
+                style="@style/custom"
+                />
+
+            <CheckBox
+
+                android:text="Cinnamon"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:id="@+id/cinnamon"
+                style="@style/custom"
+                />
+
+            <CheckBox
+
+                android:text="Choclate"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:id="@+id/choclate"
+                style="@style/custom"
+                />
+
+            <CheckBox
+
+                android:text="Butter Scotch"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:id="@+id/butter"
+                style="@style/custom"
+                />
+
             <TextView
                 android:text="QUANTITY"
                 android:layout_marginTop="16dp"

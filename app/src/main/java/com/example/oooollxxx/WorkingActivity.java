@@ -142,6 +142,11 @@ public class WorkingActivity extends AppCompatActivity {
 
 
         CheckBox choco = (CheckBox) findViewById(R.id.choco);
+        CheckBox nutella = (CheckBox) findViewById(R.id.nutella);
+        CheckBox mint = (CheckBox) findViewById(R.id.mint);
+        CheckBox cinnamon = (CheckBox) findViewById(R.id.cinnamon);
+        CheckBox choclate = (CheckBox) findViewById(R.id.choclate);
+        CheckBox butter = (CheckBox) findViewById(R.id.butter);
         if (value.length() != 0) {
             if (quantity > 0 && Whipped.isChecked() && choco.isChecked()) {
 
