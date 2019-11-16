@@ -148,32 +148,97 @@ public class WorkingActivity extends AppCompatActivity {
         CheckBox choclate = (CheckBox) findViewById(R.id.choclate);
         CheckBox butter = (CheckBox) findViewById(R.id.butter);
         if (value.length() != 0) {
-            if (quantity > 0 && Whipped.isChecked() && choco.isChecked()) {
+            if(quantity>0){
+                if (!Whipped.isChecked() && !choco.isChecked() && !nutella.isChecked() && !mint.isChecked() && !cinnamon.isChecked() && !choclate.isChecked() && !butter.isChecked()) {
 
-                Toast.makeText(getApplicationContext(), "Select Any One Topping only",
+                Toast.makeText(getApplicationContext(), "Select atleast One Topping only",
                         Toast.LENGTH_SHORT).show();
 
-            } else if (quantity > 0 && !Whipped.isChecked() && !choco.isChecked()) {
-                priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
-                        " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 0 + "\n" + "Total Price : " + 4 * quantity + "\n" + "Thank You  " +"\n" + "Have a nice day";
-                displayMessage(priceMessage);
-                Toast.makeText(getApplicationContext(), "Select atleast one topping",
-                        Toast.LENGTH_LONG).show();
-                change();
-            } else if (quantity > 0 && Whipped.isChecked()) {
-                priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
-                        " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 1 * quantity + "\n" + "Total Price : " + (4 * quantity + 1 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
-                displayMessage(priceMessage);
-                SendMail();
-                Toast.makeText(getApplicationContext(), "Order Placed...",
-                        Toast.LENGTH_LONG).show();
-                change();
-            } else if (quantity > 0 && choco.isChecked()) {
-                priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" + " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + (2 * quantity) + "\n" + "Total Price : " + (4 * quantity + 2 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
-                displayMessage(priceMessage);
-                SendMail();
-                Toast.makeText(getApplicationContext(), "Order Placed...",
-                        Toast.LENGTH_LONG).show();
+                }else if (Whipped.isChecked() && !choco.isChecked() && !nutella.isChecked() && !mint.isChecked() && !cinnamon.isChecked() && !choclate.isChecked() && !butter.isChecked()) {
+
+                    priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
+                            " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 1 * quantity + "\n" + "Total Price : " + (4 * quantity + 1 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
+                    displayMessage(priceMessage);
+                    SendMail();
+
+                    Toast.makeText(getApplicationContext(), "Order Placed...",
+                            Toast.LENGTH_LONG).show();
+                    change();
+
+                }else if (!Whipped.isChecked() && choco.isChecked() && !nutella.isChecked() && !mint.isChecked() && !cinnamon.isChecked() && !choclate.isChecked() && !butter.isChecked()) {
+
+                    priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
+                            " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 2 * quantity + "\n" + "Total Price : " + (4 * quantity + 2 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
+                    displayMessage(priceMessage);
+                    SendMail();
+
+                    Toast.makeText(getApplicationContext(), "Order Placed...",
+                            Toast.LENGTH_LONG).show();
+                    change();
+
+                }else if (!Whipped.isChecked() && !choco.isChecked() && nutella.isChecked() && !mint.isChecked() && !cinnamon.isChecked() && !choclate.isChecked() && !butter.isChecked()) {
+
+                    priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
+                            " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 3 * quantity + "\n" + "Total Price : " + (4 * quantity + 3 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
+                    displayMessage(priceMessage);
+                    SendMail();
+
+                    Toast.makeText(getApplicationContext(), "Order Placed...",
+                            Toast.LENGTH_LONG).show();
+                    change();
+
+                }else if (!Whipped.isChecked() && !choco.isChecked() && !nutella.isChecked() && mint.isChecked() && !cinnamon.isChecked() && !choclate.isChecked() && !butter.isChecked()) {
+
+                    priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
+                            " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 2 * quantity + "\n" + "Total Price : " + (4 * quantity + 2 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
+                    displayMessage(priceMessage);
+                    SendMail();
+
+                    Toast.makeText(getApplicationContext(), "Order Placed...",
+                            Toast.LENGTH_LONG).show();
+                    change();
+
+                }else if (!Whipped.isChecked() && !choco.isChecked() && !nutella.isChecked() && !mint.isChecked() && cinnamon.isChecked() && !choclate.isChecked() && !butter.isChecked()) {
+
+                    priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
+                            " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 1 * quantity + "\n" + "Total Price : " + (4 * quantity + 1 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
+                    displayMessage(priceMessage);
+                    SendMail();
+
+                    Toast.makeText(getApplicationContext(), "Order Placed...",
+                            Toast.LENGTH_LONG).show();
+                    change();
+
+                }else if (!Whipped.isChecked() && !choco.isChecked() && !nutella.isChecked() && !mint.isChecked() && !cinnamon.isChecked() && choclate.isChecked() && !butter.isChecked()) {
+
+                    priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
+                            " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 2 * quantity + "\n" + "Total Price : " + (4 * quantity + 2 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
+                    displayMessage(priceMessage);
+                    SendMail();
+
+                    Toast.makeText(getApplicationContext(), "Order Placed...",
+                            Toast.LENGTH_LONG).show();
+                    change();
+
+                }else if (!Whipped.isChecked() && !choco.isChecked() && !nutella.isChecked() && !mint.isChecked() && !cinnamon.isChecked() && !choclate.isChecked() && butter.isChecked()) {
+
+                    priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
+                            " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 3 * quantity + "\n" + "Total Price : " + (4 * quantity + 3 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
+                    displayMessage(priceMessage);
+                    SendMail();
+
+                    Toast.makeText(getApplicationContext(), "Order Placed...",
+                            Toast.LENGTH_LONG).show();
+                    change();
+
+                }else {
+
+
+                    Toast.makeText(getApplicationContext(), "You can select only one of the toppings",
+                            Toast.LENGTH_LONG).show();
+
+                }
+
             } else if (quantity == 0) {
                 Toast.makeText(getApplicationContext(), "Invalid Selection....",
                         Toast.LENGTH_LONG).show();
