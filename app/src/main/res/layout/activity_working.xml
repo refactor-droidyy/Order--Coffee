@@ -104,33 +104,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:text="-"
-                    android:id="@+id/decrement_by_1"
-                    android:background="#843536"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginLeft="8dp"
-                    android:textStyle="bold"/>
-
-                <TextView
+                <Spinner
                     style="@style/custom"
                     android:layout_marginLeft="16dp"
                     android:text="0"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
-                    android:id="@+id/quantity_text_view"
+                    android:id="@+id/spinner1"
                     />
-                <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:text="+"
-                    android:background="#843536"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="16dp"
-                    android:id="@+id/increment_by_1"
-                    android:textStyle="bold"/>
 
             </LinearLayout>
 
