@@ -12,10 +12,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,13 +33,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
-public class WorkingActivity extends AppCompatActivity {
+public class WorkingActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Toolbar tb;
     private FirebaseUser user;
     private TextView txt;
     private DatabaseReference reference;
-    private Button Order,PrintRecipt,inc,dec;
+    private Button Order,PrintRecipt;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -48,14 +51,19 @@ public class WorkingActivity extends AppCompatActivity {
         Order = findViewById(R.id.submitOrder);
         PrintRecipt = findViewById(R.id.printRecipt);
         txt = findViewById(R.id.username_toolbar);
-        inc = findViewById(R.id.increment_by_1);
-        dec = findViewById(R.id.decrement_by_1);
         tb = findViewById(R.id.toolbarworking);
         setSupportActionBar(tb);
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
+
+
+        Spinner spinner = findViewById(R.id.spinner1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.numbers, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
 
 
         reference.addValueEventListener(new ValueEventListener() {
@@ -88,19 +96,6 @@ public class WorkingActivity extends AppCompatActivity {
             }
         });
 
-        inc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                increment();
-            }
-        });
-
-        dec.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                decrement();
-            }
-        });
     }
 
     private void PrintRecipt() {
@@ -111,25 +106,7 @@ public class WorkingActivity extends AppCompatActivity {
     int quantity = 0;
 
 
-    private void increment() {
 
-
-        quantity = quantity + 1;
-
-        displayquantity(quantity);
-
-
-    }
-
-    private void decrement() {
-        int res = 0;
-        quantity = quantity - 1;
-        if (quantity <= 0) {
-            quantity = res;
-        }
-        displayquantity(quantity);
-
-    }
 
 
     String priceMessage ;
@@ -238,6 +215,26 @@ public class WorkingActivity extends AppCompatActivity {
                             Toast.LENGTH_LONG).show();
 
                 }
+            } else if (quantity > 0 && !Whipped.isChecked() && !choco.isChecked()) {                priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
+                        " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 0 + "\n" + "Total Price : " + 4 * quantity + "\n" + "Thank You  " +"\n" + "Have a nice day";
+                displayMessage(priceMessage);
+                Toast.makeText(getApplicationContext(), "Select atleast one topping",
+                        Toast.LENGTH_LONG).show();
+
+            } else if (quantity > 0 && Whipped.isChecked()) {
+                priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
+                        " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 1 * quantity + "\n" + "Total Price : " + (4 * quantity + 1 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
+                displayMessage(priceMessage);
+                SendMail();
+                Toast.makeText(getApplicationContext(), "Order Placed...",
+                        Toast.LENGTH_LONG).show();
+
+            } else if (quantity > 0 && choco.isChecked()) {
+                priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" + " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + (2 * quantity) + "\n" + "Total Price : " + (4 * quantity + 2 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
+                displayMessage(priceMessage);
+                SendMail();
+                Toast.makeText(getApplicationContext(), "Order Placed...",
+                        Toast.LENGTH_LONG).show();
 
             } else if (quantity == 0) {
                 Toast.makeText(getApplicationContext(), "Invalid Selection....",
@@ -261,18 +258,7 @@ public class WorkingActivity extends AppCompatActivity {
 
 
 
-    private void displayquantity(int number) {
 
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
-
-
-    }
-
-    private void change(){
-        TextView PriceTextView = (TextView) findViewById(R.id.Order_sum);
-        PriceTextView.setText("Order \nSummary:");
-    }
 
 
 
@@ -304,11 +290,50 @@ public class WorkingActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_logout:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(WorkingActivity.this,RegisterActivity.class));
+                startActivity(new Intent(WorkingActivity.this,LoginActivity.class));
                 finish();
 
         }
         return true;
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (parent.getItemAtPosition(position).equals("One")){
+            quantity = 1;
+        }
+        if (parent.getItemAtPosition(position).equals("Two")){
+            quantity = 2;
+        }
+        if (parent.getItemAtPosition(position).equals("Three")){
+            quantity = 3;
+        }
+        if (parent.getItemAtPosition(position).equals("Four")){
+            quantity = 4;
+        }
+        if (parent.getItemAtPosition(position).equals("Five")){
+            quantity = 5;
+        }
+        if (parent.getItemAtPosition(position).equals("Six")){
+            quantity = 6;
+        }
+        if (parent.getItemAtPosition(position).equals("Seven")){
+            quantity = 7;
+        }
+        if (parent.getItemAtPosition(position).equals("Eight")){
+            quantity = 8;
+        }
+        if (parent.getItemAtPosition(position).equals("Nine")){
+            quantity = 9;
+        }
+        if (parent.getItemAtPosition(position).equals("Ten")){
+            quantity = 10;
+        }
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }
