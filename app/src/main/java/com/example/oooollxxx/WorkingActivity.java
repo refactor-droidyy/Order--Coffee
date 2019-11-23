@@ -159,7 +159,7 @@ public class WorkingActivity extends AppCompatActivity {
                     priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                             " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 1 * quantity + "\n" + "Total Price : " + (4 * quantity + 1 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                     displayMessage(priceMessage);
-                    SendMail();
+
 
                     Toast.makeText(getApplicationContext(), "Order Placed...",
                             Toast.LENGTH_LONG).show();
@@ -170,7 +170,7 @@ public class WorkingActivity extends AppCompatActivity {
                     priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                             " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 2 * quantity + "\n" + "Total Price : " + (4 * quantity + 2 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                     displayMessage(priceMessage);
-                    SendMail();
+
 
                     Toast.makeText(getApplicationContext(), "Order Placed...",
                             Toast.LENGTH_LONG).show();
@@ -181,7 +181,7 @@ public class WorkingActivity extends AppCompatActivity {
                     priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                             " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 3 * quantity + "\n" + "Total Price : " + (4 * quantity + 3 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                     displayMessage(priceMessage);
-                    SendMail();
+
 
                     Toast.makeText(getApplicationContext(), "Order Placed...",
                             Toast.LENGTH_LONG).show();
@@ -192,7 +192,7 @@ public class WorkingActivity extends AppCompatActivity {
                     priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                             " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 2 * quantity + "\n" + "Total Price : " + (4 * quantity + 2 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                     displayMessage(priceMessage);
-                    SendMail();
+
 
                     Toast.makeText(getApplicationContext(), "Order Placed...",
                             Toast.LENGTH_LONG).show();
@@ -203,7 +203,7 @@ public class WorkingActivity extends AppCompatActivity {
                     priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                             " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 1 * quantity + "\n" + "Total Price : " + (4 * quantity + 1 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                     displayMessage(priceMessage);
-                    SendMail();
+
 
                     Toast.makeText(getApplicationContext(), "Order Placed...",
                             Toast.LENGTH_LONG).show();
@@ -214,7 +214,7 @@ public class WorkingActivity extends AppCompatActivity {
                     priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                             " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 2 * quantity + "\n" + "Total Price : " + (4 * quantity + 2 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                     displayMessage(priceMessage);
-                    SendMail();
+
 
                     Toast.makeText(getApplicationContext(), "Order Placed...",
                             Toast.LENGTH_LONG).show();
@@ -225,7 +225,7 @@ public class WorkingActivity extends AppCompatActivity {
                     priceMessage = "Customer Name :" + value + "\n" + "Price of coffee :" +
                             " 4 Rupees" + "\n" + "Total coffee : " + quantity + "\n" + "Topping Cost :" + 3 * quantity + "\n" + "Total Price : " + (4 * quantity + 3 * quantity) + "\n" + "Thank You " +"\n" + "Have a nice day";
                     displayMessage(priceMessage);
-                    SendMail();
+
 
                     Toast.makeText(getApplicationContext(), "Order Placed...",
                             Toast.LENGTH_LONG).show();
@@ -256,15 +256,7 @@ public class WorkingActivity extends AppCompatActivity {
 
     }
 
-    private void SendMail(){
-        String subject = "Coffee Reciept";
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        intent.putExtra(Intent.EXTRA_TEXT,priceMessage);
 
-        intent.setType("message/rfc822");
-        startActivity(Intent.createChooser(intent,"Choose youe E-mail Client" ));
-    }
 
 
 
